@@ -9,6 +9,7 @@ class Node:
         self.v = val
         self.node_id = n_id
 
+
 class Tree:
     def __init__(self,N):
         self.num_leaves = N
@@ -18,6 +19,7 @@ class Tree:
             self.add(N,self.root,n_id)
         else:
             return
+
     def add(self, val, par, n_id):
         '''
         Adding a node to the tree with value v, parent node par, and node id n_id
@@ -49,6 +51,7 @@ class Tree:
             return self._find_id(n_id, self.root)
         else:
             return None
+
     def _find_id(self,n_id,node):
         if node.l == None:
             return node
