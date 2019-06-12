@@ -43,7 +43,7 @@ update(self, node, value_new)
 printTree(self)
 ``` 
 
-
+----
 To start, you might want to look at the notebook
 
 * "[TreeSampler Example Code](https://github.com/F-Salehi/AdaptiveSampler/blob/master/example.ipynb)"
