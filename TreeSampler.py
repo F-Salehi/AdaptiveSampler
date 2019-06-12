@@ -18,13 +18,16 @@ class Tree:
             self.add(N,self.root,n_id)
         else:
             return
-    def add(self, val,par,n_id):
+    def add(self, val, par, n_id):
+        '''
+        Adding a node to the tree with value v, parent node par, and node id n_id
+        '''
         if val >1:
             sep = int(val/2.0)
-            par.l = Node(sep,par,n_id)
-            n_id = self.add(sep,par.l,n_id)
-            par.r = Node(val-sep,par,n_id)
-            n_id = self.add(val-sep,par.r,n_id)
+            par.l = Node(sep, par, n_id)
+            n_id = self.add(sep, par.l, n_id)
+            par.r = Node(val-sep, par, n_id)
+            n_id = self.add(val-sep, par.r, n_id)
             return n_id
         else:
             par.node_id = n_id
@@ -32,6 +35,9 @@ class Tree:
             return n_id
 
     def getRoot(self):
+        '''
+        Getting the root of tree.
+        '''
         return self.root
 
     def find_id(self,n_id):
@@ -93,6 +99,9 @@ class Tree:
             self.update(node, v)
 
     def update(self, node, value_new):
+        '''
+        Updating the value of a node
+        '''
         value_old = node.v
         diff_value = value_new - value_old
         node.v = value_new
@@ -102,12 +111,12 @@ class Tree:
         return
 
     def deleteTree(self):
-        # garbage collector will do this for us.
+        # garbage collector will do this for us
         self.root = None
 
     def printTree(self):
         '''
-        In-order Traversal of the tree.
+        In-order traversal of the tree
         '''
         if(self.root != None):
             self._printTree(self.root)
